@@ -3,6 +3,7 @@ import unittest
 import pandas as pd
 
 from src.data_loader import FEATURE_COLUMNS, TARGET_COLUMN, load_iris_data
+from src.models import get_models, train_models
 from src.preprocessing import clean_data, split_data
 
 
@@ -42,6 +43,19 @@ class IrisPipelineTests(unittest.TestCase):
         self.assertEqual(train_counts.index.tolist(), test_counts.index.tolist())
         proportions = train_counts / (train_counts + test_counts)
         self.assertTrue(((proportions - 0.8).abs() <= 0.05).all())
+
+    def test_candidate_models_train_from_training_partition(self):
+        data, _ = clean_data(load_iris_data())
+        X_train, _, y_train, _ = split_data(data)
+        models = get_models()
+        self.assertEqual(
+            set(models),
+            {"logistic_regression", "knn", "decision_tree", "support_vector_machine"},
+        )
+        fitted = train_models(models, X_train, y_train)
+        self.assertEqual(set(fitted), set(models))
+        for model in fitted.values():
+            self.assertEqual(set(model.classes_), set(y_train.unique()))
 
 
 if __name__ == "__main__":
