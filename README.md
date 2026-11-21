@@ -33,16 +33,27 @@ Decision Tree does not require feature scaling.
 
 ## Run
 
-Install dependencies in an environment, then run:
+From Windows PowerShell, create and activate the virtual environment, install
+the dependencies, and run the project:
 
-```bash
-pip install -r requirements.txt
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 python main.py
 ```
 
-The workflow writes a data and cleaning summary, full model metrics, a sorted
-`model_comparison.csv`, EDA plots, and one confusion-matrix plot per model to
-`results/`.
+The workflow writes:
+
+- `results/data_summary.json`: dataset checks and the selected model.
+- `results/model_metrics.json`: per-model test and cross-validation metrics.
+- `results/model_comparison.csv`: sortable scalar metrics for comparing models.
+- `results/eda/`: feature distributions, class comparisons, correlations, and
+  the feature pairplot.
+- `results/confusion_matrices/`: a labeled confusion matrix for each model.
+
+To regenerate only the EDA plots and console summaries, run
+`python notebooks/01_exploratory_data_analysis.py` from the project root.
 
 Run the unit tests with:
 
