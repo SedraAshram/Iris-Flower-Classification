@@ -1,0 +1,48 @@
+import unittest
+
+import pandas as pd
+
+from src.data_loader import FEATURE_COLUMNS, TARGET_COLUMN, load_iris_data
+from src.preprocessing import clean_data, split_data
+
+
+class IrisPipelineTests(unittest.TestCase):
+    def test_loader_returns_expected_schema_and_classes(self):
+        data = load_iris_data()
+        self.assertEqual(list(data.columns), FEATURE_COLUMNS + [TARGET_COLUMN])
+        self.assertEqual(len(data), 150)
+        self.assertEqual(data[TARGET_COLUMN].nunique(), 3)
+        self.assertEqual(data[TARGET_COLUMN].value_counts().min(), 50)
+
+    def test_validation_retains_repeated_observations_and_reports_them(self):
+        data = load_iris_data()
+        validated, audit = clean_data(data)
+        self.assertEqual(len(validated), 150)
+        self.assertEqual(audit["duplicate_rows_retained"], 3)
+        self.assertEqual(audit["missing_values"], 0)
+
+    def test_validation_rejects_missing_or_implausible_measurements(self):
+        data = load_iris_data()
+        data.loc[0, "sepal_length_cm"] = None
+        with self.assertRaises(ValueError):
+            clean_data(data)
+        data = load_iris_data()
+        data.loc[0, "sepal_length_cm"] = 11
+        with self.assertRaises(ValueError):
+            clean_data(data)
+
+    def test_split_is_stratified_and_reproducible(self):
+        data, _ = clean_data(load_iris_data())
+        first = split_data(data)
+        second = split_data(data)
+        self.assertEqual(first[0].index.tolist(), second[0].index.tolist())
+        self.assertEqual(first[1].index.tolist(), second[1].index.tolist())
+        train_counts = first[2].value_counts().sort_index()
+        test_counts = first[3].value_counts().sort_index()
+        self.assertEqual(train_counts.index.tolist(), test_counts.index.tolist())
+        proportions = train_counts / (train_counts + test_counts)
+        self.assertTrue(((proportions - 0.8).abs() <= 0.05).all())
+
+
+if __name__ == "__main__":
+    unittest.main()
