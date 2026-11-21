@@ -1,0 +1,274 @@
+{
+  "logistic_regression": {
+    "accuracy": 0.9333333333333333,
+    "precision_macro": 0.9333333333333332,
+    "recall_macro": 0.9333333333333332,
+    "f1_macro": 0.9333333333333332,
+    "precision_weighted": 0.9333333333333333,
+    "recall_weighted": 0.9333333333333333,
+    "f1_weighted": 0.9333333333333333,
+    "cv_accuracy_mean": 0.9583333333333334,
+    "cv_accuracy_std": 0.026352313834736508,
+    "cv_f1_macro_mean": 0.9579707438530969,
+    "cv_f1_macro_std": 0.02677171608964413,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        9,
+        1
+      ],
+      [
+        0,
+        1,
+        9
+      ]
+    ],
+    "labels": [
+      "Iris-setosa",
+      "Iris-versicolor",
+      "Iris-virginica"
+    ],
+    "classification_report": {
+      "Iris-setosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Iris-versicolor": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1-score": 0.9,
+        "support": 10.0
+      },
+      "Iris-virginica": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1-score": 0.9,
+        "support": 10.0
+      },
+      "accuracy": 0.9333333333333333,
+      "macro avg": {
+        "precision": 0.9333333333333332,
+        "recall": 0.9333333333333332,
+        "f1-score": 0.9333333333333332,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 0.9333333333333333,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.9333333333333333,
+        "support": 30.0
+      }
+    }
+  },
+  "knn": {
+    "accuracy": 0.9333333333333333,
+    "precision_macro": 0.9444444444444445,
+    "recall_macro": 0.9333333333333332,
+    "f1_macro": 0.9326599326599326,
+    "precision_weighted": 0.9444444444444445,
+    "recall_weighted": 0.9333333333333333,
+    "f1_weighted": 0.9326599326599326,
+    "cv_accuracy_mean": 0.9583333333333334,
+    "cv_accuracy_std": 0.026352313834736508,
+    "cv_f1_macro_mean": 0.9579707438530969,
+    "cv_f1_macro_std": 0.02677171608964413,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        2,
+        8
+      ]
+    ],
+    "labels": [
+      "Iris-setosa",
+      "Iris-versicolor",
+      "Iris-virginica"
+    ],
+    "classification_report": {
+      "Iris-setosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Iris-versicolor": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1-score": 0.9090909090909091,
+        "support": 10.0
+      },
+      "Iris-virginica": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1-score": 0.8888888888888888,
+        "support": 10.0
+      },
+      "accuracy": 0.9333333333333333,
+      "macro avg": {
+        "precision": 0.9444444444444445,
+        "recall": 0.9333333333333332,
+        "f1-score": 0.9326599326599326,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 0.9444444444444445,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.9326599326599326,
+        "support": 30.0
+      }
+    }
+  },
+  "decision_tree": {
+    "accuracy": 0.9333333333333333,
+    "precision_macro": 0.9333333333333332,
+    "recall_macro": 0.9333333333333332,
+    "f1_macro": 0.9333333333333332,
+    "precision_weighted": 0.9333333333333333,
+    "recall_weighted": 0.9333333333333333,
+    "f1_weighted": 0.9333333333333333,
+    "cv_accuracy_mean": 0.95,
+    "cv_accuracy_std": 0.016666666666666698,
+    "cv_f1_macro_mean": 0.9496047307812013,
+    "cv_f1_macro_std": 0.017130407718643027,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        9,
+        1
+      ],
+      [
+        0,
+        1,
+        9
+      ]
+    ],
+    "labels": [
+      "Iris-setosa",
+      "Iris-versicolor",
+      "Iris-virginica"
+    ],
+    "classification_report": {
+      "Iris-setosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Iris-versicolor": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1-score": 0.9,
+        "support": 10.0
+      },
+      "Iris-virginica": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1-score": 0.9,
+        "support": 10.0
+      },
+      "accuracy": 0.9333333333333333,
+      "macro avg": {
+        "precision": 0.9333333333333332,
+        "recall": 0.9333333333333332,
+        "f1-score": 0.9333333333333332,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 0.9333333333333333,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.9333333333333333,
+        "support": 30.0
+      }
+    }
+  },
+  "support_vector_machine": {
+    "accuracy": 0.9666666666666667,
+    "precision_macro": 0.9696969696969697,
+    "recall_macro": 0.9666666666666667,
+    "f1_macro": 0.9665831244778612,
+    "precision_weighted": 0.9696969696969696,
+    "recall_weighted": 0.9666666666666667,
+    "f1_weighted": 0.9665831244778613,
+    "cv_accuracy_mean": 0.9666666666666668,
+    "cv_accuracy_std": 0.016666666666666653,
+    "cv_f1_macro_mean": 0.9665359477124185,
+    "cv_f1_macro_std": 0.016732026143790834,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        9,
+        1
+      ],
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "labels": [
+      "Iris-setosa",
+      "Iris-versicolor",
+      "Iris-virginica"
+    ],
+    "classification_report": {
+      "Iris-setosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Iris-versicolor": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1-score": 0.9473684210526315,
+        "support": 10.0
+      },
+      "Iris-virginica": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1-score": 0.9523809523809523,
+        "support": 10.0
+      },
+      "accuracy": 0.9666666666666667,
+      "macro avg": {
+        "precision": 0.9696969696969697,
+        "recall": 0.9666666666666667,
+        "f1-score": 0.9665831244778612,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 0.9696969696969696,
+        "recall": 0.9666666666666667,
+        "f1-score": 0.9665831244778613,
+        "support": 30.0
+      }
+    }
+  }
+}

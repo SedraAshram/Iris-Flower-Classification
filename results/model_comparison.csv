@@ -1,0 +1,5 @@
+model,cv_accuracy_mean,cv_accuracy_std,cv_f1_macro_mean,cv_f1_macro_std,accuracy,precision_macro,recall_macro,f1_macro,precision_weighted,recall_weighted,f1_weighted
+support_vector_machine,0.9667,0.0167,0.9665,0.0167,0.9667,0.9697,0.9667,0.9666,0.9697,0.9667,0.9666
+logistic_regression,0.9583,0.0264,0.9580,0.0268,0.9333,0.9333,0.9333,0.9333,0.9333,0.9333,0.9333
+knn,0.9583,0.0264,0.9580,0.0268,0.9333,0.9444,0.9333,0.9327,0.9444,0.9333,0.9327
+decision_tree,0.9500,0.0167,0.9496,0.0171,0.9333,0.9333,0.9333,0.9333,0.9333,0.9333,0.9333
